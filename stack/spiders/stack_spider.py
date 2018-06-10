@@ -4,6 +4,9 @@ from stack.items import StackItem
 
 
 class StackSpider(Spider):
+	"""
+	Defined Spider to retrieve last 50 questions from stack overflow.
+	"""
 	name = "stack"
 	allowed_domains = ["stackoverflow.com"]
 	start_urls = [
@@ -11,6 +14,9 @@ class StackSpider(Spider):
 	]
 
 	def parse(self, response):
+		"""
+		Extract title and link from scraped data.
+		"""
 		questions = Selector(response).xpath('//div[@class="summary"]/h3')
 		for question in questions:
 			item = StackItem()

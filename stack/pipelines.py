@@ -12,6 +12,9 @@ from scrapy.exceptions import DropItem
 
 
 class MongoDBPipeline(object):
+    """
+    Pipeline to connect with local MongoDB and upload scraped items.
+    """
     def __init__(self):
         connection = pymongo.MongoClient(settings['MONGODB_SERVER'],
                                          settings['MONGODB_PORT'])

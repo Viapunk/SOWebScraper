@@ -9,5 +9,8 @@ from scrapy import Item, Field
 
 
 class StackItem(Item):
+	"""
+	Item to store title and question url from scraped data.
+	"""
 	title = Field()
 	url = Field()
